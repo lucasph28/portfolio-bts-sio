@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | BTS SIO SLAM</title>
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <header>
+    <div class="conteneur barre">
+      <strong>Mon portfolio</strong>
+      <nav aria-label="Navigation principale">
+        <a href="#profil">Profil</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteneur">
+    <!-- Remplace Prénom Nom et personnalise ta présentation. -->
+    <div class="decor-arcade" aria-hidden="true">
+      <div class="decor-arcade-cote">
+        <img src="switch-deco.png" alt="" width="1536" height="1024">
+        <pre><code data-code-deco>const projet = "SLAM";</code></pre>
+      </div>
+      <div class="decor-arcade-cote">
+        <img src="switch-deco.png" alt="" width="1536" height="1024">
+        <pre><code data-code-deco>SELECT * FROM projets;</code></pre>
+      </div>
+    </div>
+    <section class="console" id="profil" aria-labelledby="titre-profil">
+      <div class="ecran">
+        <img class="photo-profil" id="photo-profil" alt="Photo de profil" hidden>
+        <div class="choix-photo">
+          <label for="fichier-photo">Choisir une photo de profil</label>
+          <input id="fichier-photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="aide-photo">
+          <p id="aide-photo">JPG, PNG ou WebP · 2 Mo maximum</p>
+          <button id="retirer-photo" type="button" hidden>Retirer la photo</button>
+          <p id="message-photo" role="status"></p>
+        </div>
+        <p class="formation">BTS SIO · Option SLAM</p>
+        <h1 id="titre-profil">Salut, moi c’est Lucas Pham !</h1>
+        <p>Je me forme au développement d’applications en BTS Services informatiques aux organisations, option Solutions logicielles et applications métiers. Ce portfolio rassemble mes projets et ce que j’apprends en les réalisant.</p>
+        <a class="bouton" href="#projets">Voir mes projets</a>
+      </div>
+    </section>
+
+    <section id="projets">
+      <h2>Mes projets</h2>
+      <p>Clique sur un projet pour voir ses fichiers ou en ajouter. Les fichiers sont conservés dans ce navigateur.</p>
+      <div class="grille">
+        <!-- Pour ajouter un projet, duplique un bloc details et donne-lui un identifiant unique. -->
+        <details class="carte projet" data-projet="site-vitrine">
+          <summary>Site vitrine</summary>
+          <p>Présenter une association avec une page d’accueil et une navigation adaptée au mobile.</p>
+          <p class="technos">HTML · CSS</p>
+          <label for="fichiers-site-vitrine">Ajouter des fichiers</label>
+          <input id="fichiers-site-vitrine" type="file" multiple disabled>
+          <p role="status">Chargement des fichiers…</p>
+          <ul aria-label="Fichiers du projet"></ul>
+        </details>
+        <details class="carte projet" data-projet="quiz-interactif">
+          <summary>Quiz interactif</summary>
+          <p>Afficher des questions, vérifier les réponses et calculer le score final.</p>
+          <p class="technos">HTML · CSS · JavaScript</p>
+          <label for="fichiers-quiz-interactif">Ajouter des fichiers</label>
+          <input id="fichiers-quiz-interactif" type="file" multiple disabled>
+          <p role="status">Chargement des fichiers…</p>
+          <ul aria-label="Fichiers du projet"></ul>
+        </details>
+        <details class="carte projet" data-projet="catalogue-jeux">
+          <summary>Catalogue de jeux</summary>
+          <p>Stocker des jeux dans une base de données et les retrouver par genre.</p>
+          <p class="technos">SQL</p>
+          <label for="fichiers-catalogue-jeux">Ajouter des fichiers</label>
+          <input id="fichiers-catalogue-jeux" type="file" multiple disabled>
+          <p role="status">Chargement des fichiers…</p>
+          <ul aria-label="Fichiers du projet"></ul>
+        </details>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences</h2>
+      <!-- Garde les compétences que tu peux illustrer avec un exemple. -->
+      <ul>
+        <li>Structurer et mettre en page un site avec HTML et CSS.</li>
+        <li>Ajouter des interactions en JavaScript.</li>
+        <li>Interroger une base de données avec SQL.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <!-- Remplace l’adresse dans le lien et dans le texte affiché. -->
+      <a href="lucas.pham2811@gmail.com">lucas.pham2811@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="conteneur">Lucas Pham · Portfolio BTS SIO SLAM</div>
+  </footer>
+  <script src="portfolio.js"></script>
+</body>
+</html>

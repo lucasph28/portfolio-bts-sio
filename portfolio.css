@@ -1,0 +1,273 @@
+/* Change ces couleurs pour personnaliser le thème. */
+:root {
+  --rouge: #ff5264;
+  --bleu: #59d9f5;
+  --fond: #111521;
+  --carte: #1c2333;
+  --texte: #f5f7ff;
+  --secondaire: #bbc5d8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+.conteneur { width: min(70rem, 92%); margin-inline: auto; }
+header { border-bottom: 1px solid #323b50; }
+.barre, nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+.barre { justify-content: space-between; padding-block: 1rem; }
+a { color: var(--bleu); text-underline-offset: 0.2em; }
+a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 5px; }
+nav a { color: var(--texte); }
+.console {
+  margin-block: 3rem;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: var(--carte);
+  border-inline: clamp(0.55rem, 4vw, 3.5rem) solid var(--rouge);
+  border-right-color: var(--bleu);
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem #0005;
+}
+.ecran {
+  background: var(--fond);
+  border: 1px solid #323b50;
+  border-radius: 1rem;
+  padding: clamp(1rem, 5vw, 3.5rem);
+}
+.photo-profil {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border: 3px solid var(--bleu);
+  border-radius: 50%;
+}
+.photo-profil[hidden] { display: none; }
+.choix-photo { margin-block: 1rem; }
+.choix-photo label { display: block; font-weight: 700; }
+.choix-photo input { max-width: 100%; font: inherit; }
+.choix-photo p { margin: 0.25rem 0; }
+.formation { color: var(--bleu); font-weight: 700; }
+h1, h2, h3 { line-height: 1.15; }
+h1 { font-size: clamp(2rem, 7vw, 4.5rem); margin: 0.25em 0; }
+h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+p { color: var(--secondaire); max-width: 62ch; }
+.bouton {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--rouge);
+  color: var(--fond);
+  border-radius: 2rem;
+  font-weight: 700;
+}
+main > section { margin-block: 3rem; }
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+.carte {
+  padding: 1.25rem;
+  border: 1px solid #323b50;
+  border-radius: 1rem;
+  background: var(--carte);
+}
+.carte h3 { margin-top: 0; }
+.technos { color: var(--bleu); font-weight: 600; }
+footer { border-top: 1px solid #323b50; padding-block: 1rem; }
+
+
+/* Chaque titre de projet ouvre les détails et les fichiers. */
+.projet summary {
+  cursor: pointer;
+  color: var(--texte);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.projet summary:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 4px;
+}
+.projet label { display: block; font-weight: 700; }
+.projet input { max-width: 100%; font: inherit; }
+.projet ul { padding-inline-start: 1.3rem; overflow-wrap: anywhere; }
+.projet [role="status"]:empty { display: none; }
+
+
+/* Palette inspirée des consoles portables et des jeux Nintendo. */
+:root {
+  --rouge: #ff5066;
+  --bleu: #45dcff;
+  --jaune: #ffdf62;
+  --vert: #8cef9c;
+  --violet: #c0aaff;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 0 0, #482039 0, transparent 35rem),
+    radial-gradient(ellipse at 100% 10%, #103c57 0, transparent 38rem),
+    var(--fond);
+}
+
+header {
+  background: #111521;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--rouge), var(--jaune), var(--vert), var(--bleu)) 1;
+}
+
+nav a:hover { color: var(--jaune); }
+
+.console {
+  position: relative;
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 1.6rem;
+  background: linear-gradient(90deg, var(--rouge), var(--violet), var(--bleu));
+  box-shadow: 0 0.6rem 0 #080b14, 0 1.5rem 2.5rem #0006;
+}
+
+.ecran {
+  background:
+    radial-gradient(circle at top right, #24314e, transparent 65%),
+    var(--fond);
+  border: 0.35rem solid #0a0d16;
+}
+
+.bouton {
+  background: var(--jaune);
+  box-shadow: 0 0.25rem 0 #bd7f26;
+}
+.bouton:hover { background: #fff0a0; }
+.bouton:active { box-shadow: none; transform: translateY(0.25rem); }
+
+#projets h2 { color: var(--jaune); }
+#competences h2 { color: var(--vert); }
+#contact h2 { color: var(--violet); }
+
+.grille { align-items: start; }
+
+.projet {
+  --accent: var(--jaune);
+  border-top: 0.3rem solid var(--accent);
+}
+.projet[data-projet="site-vitrine"] { --accent: var(--rouge); }
+.projet[data-projet="quiz-interactif"] { --accent: var(--vert); }
+.projet[data-projet="catalogue-jeux"] { --accent: var(--bleu); }
+.projet summary::marker, .projet .technos { color: var(--accent); }
+.projet summary:hover { color: var(--accent); }
+
+input::file-selector-button {
+  margin-inline-end: 0.5rem;
+  padding: 0.35rem 0.65rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--accent, var(--bleu));
+  color: var(--fond);
+  font: inherit;
+  font-weight: 700;
+}
+input:enabled::file-selector-button { cursor: pointer; }
+
+/* Sur grand écran, les côtés laissent la place aux commandes décoratives. */
+@media (min-width: 48rem) {
+  .console {
+    padding: 0.85rem 5rem;
+    border-radius: 3rem;
+    background: linear-gradient(90deg, var(--rouge) 5rem, #0a0d16 5rem,
+      #0a0d16 calc(100% - 5rem), var(--bleu) calc(100% - 5rem));
+  }
+
+  .console::before, .console::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .console::before {
+    top: 5rem;
+    left: 1.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: #202637;
+    clip-path: polygon(34% 0, 66% 0, 66% 34%, 100% 34%, 100% 66%,
+      66% 66%, 66% 100%, 34% 100%, 34% 66%, 0 66%, 0 34%, 34% 34%);
+  }
+
+  .console::after {
+    top: 5.8rem;
+    right: 1.9rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 -1rem #2454ad, 1rem 0 #a42243,
+      0 1rem #8b5b10, -1rem 0 #176448;
+  }
+}
+
+
+
+/* Décor Switch et extraits de code autour du portfolio. */
+.decor-arcade {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  pointer-events: none;
+}
+.decor-arcade-cote {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  width: min(48%, 12rem);
+  min-width: 0;
+}
+.decor-arcade img {
+  display: block;
+  width: min(100%, 8rem);
+  height: auto;
+  transform: rotate(-12deg);
+  filter: drop-shadow(0 0 0.8rem #ff506655);
+}
+.decor-arcade-cote:nth-child(2) img {
+  transform: rotate(12deg);
+  filter: hue-rotate(52deg) drop-shadow(0 0 0.8rem #45dcff66);
+}
+.decor-arcade pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.35rem;
+  background: #111521;
+  color: var(--vert);
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.decor-arcade-cote:nth-child(2) pre { color: var(--bleu); }
+@media (max-width: 89.99rem) {
+  .decor-arcade + .console { margin-top: 1.25rem; }
+}
+@media (min-width: 90rem) {
+  .decor-arcade {
+    position: absolute;
+    top: 9rem;
+    inset-inline: 0.65rem;
+    padding: 0;
+  }
+  .decor-arcade-cote {
+    width: clamp(8.5rem, calc((100vw - 72rem) / 2), 15rem);
+    opacity: 0.8;
+  }
+  .decor-arcade-cote:nth-child(2) { margin-top: 13rem; }
+  .decor-arcade img { width: min(100%, 14rem); }
+}
